@@ -1,0 +1,221 @@
+<html><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Horario de Colegio</title>
+	<script type="text/javascript" src="jquery-1.6.1.min.js"></script>
+	<script type="text/javascript" src="jquery.easyui.min.js"></script>
+</head>
+<body>
+	<div style="width:700px;">
+		<div class="left droppable">
+			<table>
+				<tbody>
+					<tr>
+						<td><div class="item">Taller</div></td>
+					</tr>
+					<tr>
+						<td><div class="item">Teoria</div></td>
+					</tr>
+					<tr>
+						<td><div class="item">Calculo</div></td>
+					</tr>
+					<tr>
+						<td><div class="item">Dibujo</div></td>
+					</tr>
+					<tr>
+						<td><div class="item">Religion</div></td>
+					</tr>
+					<tr>
+						<td><div class="item">Matematica</div></td>
+					</tr>
+					<tr>
+						<td><div class="item">Estadistica</div></td>
+					</tr>
+					<tr>
+						<td><div class="item">Ingles</div></td>
+					</tr>
+					<tr>
+						<td><div class="item">Lenguaje</div></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="right">
+			<table>
+				<tbody>
+					<tr>
+						<td class="blank"></td>
+						<td class="title">Lunes</td>
+						<td class="title">Martes</td>
+						<td class="title">Miercoles</td>
+						<td class="title">Jueves</td>
+						<td class="title">Viernes</td>
+					</tr>
+					<tr>
+						<td class="time">07:05</td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+					</tr>
+					<tr>
+						<td class="time">07:40</td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+					</tr>
+					<tr>
+						<td class="time">08:15</td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+					</tr>
+					<tr>
+						<td class="time">08:50</td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+					</tr>
+					<tr>
+						<td class="time">09:25</td>
+						<td class="receso" colspan="5">Receso</td>
+					</tr>
+					<tr>
+						<td class="time">09:45</td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+					</tr>
+					<tr>
+						<td class="time">10:20</td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+					</tr>
+					<tr>
+						<td class="time">10:55</td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+					</tr>
+					<tr>
+						<td class="time">11:30</td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+						<td class="drop droppable"></td>
+					</tr>
+					<tr>
+						<td class="time">12:05</td>
+						<td class="salida" colspan="5">Salida!!!</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<style type="text/css">
+		.left{
+			width:120px;
+			float:left;
+		}
+		.left table{
+			background:#E0ECFF;
+		}
+		.left td{
+			background:#eee;
+		}
+		.right{
+			float:right;
+			width:570px;
+		}
+		.right table{
+			background:#E0ECFF;
+			width:100%;
+		}
+		.right td{
+			background:#fafafa;
+			color:#444;
+			text-align:center;
+			padding:2px;
+		}
+		.right td{
+			background:#E0ECFF;
+		}
+		.right td.drop{
+			background:#fafafa;
+			width:100px;
+		}
+		.right td.over{
+			background:#FBEC88;
+		}
+		.item{
+			text-align:center;
+			border:1px solid #499B33;
+			background:#fafafa;
+			color:#444;
+			width:100px;
+		}
+		.assigned{
+			border:1px solid #BC2A4D;
+		}
+		.trash{
+			background-color:red;
+		}
+		
+	</style>
+	<script>
+		$(function(){
+			$('.left .item').draggable({
+				revert:true,
+				proxy:'clone'
+			});
+			$('.right td.drop').droppable({
+				accept: '.item',
+				onDragEnter:function(){
+					$(this).addClass('over');
+				},
+				onDragLeave:function(){
+					$(this).removeClass('over');
+				},
+				onDrop:function(e,source){
+					$(this).removeClass('over');
+					if ($(source).hasClass('assigned')){
+						$(this).append(source);
+					} else {
+						var c = $(source).clone().addClass('assigned');
+						$(this).empty().append(c);
+						c.draggable({
+							revert:true
+						});
+					}
+				}
+			});
+			$('.left').droppable({
+				accept:'.assigned',
+				onDragEnter:function(e,source){
+					$(source).addClass('trash');
+				},
+				onDragLeave:function(e,source){
+					$(source).removeClass('trash');
+				},
+				onDrop:function(e,source){
+					$(source).remove();
+				}
+			});
+		});
+	</script>
+</body>
+</html>

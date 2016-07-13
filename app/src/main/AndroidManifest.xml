@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.andersonguerra.org.timetablestudentapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_principal"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MenuPrincipal"
+            android:label="@string/title_activity_menu_principal"></activity>
+        <activity
+            android:name=".Settings"
+            android:label="@string/title_activity_settings"></activity>
+        <activity
+            android:name=".RelojAlarma"
+            android:label="@string/title_activity_alarm_clock"></activity>
+        <activity
+            android:name=".Homework"
+            android:label="@string/title_activity_homework"></activity>
+        <activity
+            android:name=".Calculadora"
+            android:label="@string/title_activity_calculadora"></activity>
+        <activity
+            android:name=".Horario"
+            android:label="@string/title_activity_horario"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".Revision"
+            android:label="@string/title_activity_revision"></activity>
+
+        <receiver android:name=".Alarm_Reciever" />
+
+        <service
+            android:name=".RingtonePlayingService"
+            android:enabled="true"></service>
+
+        <activity android:name=".EditHomework"></activity>
+    </application>
+
+</manifest>

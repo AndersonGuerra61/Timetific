@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Timetific</string>
+    <string name="action_settings">Opciones</string>
+    <string name="Student_Life">Vida Estudiantil</string>
+    <string name="Log_In">Iniciar Sesion</string>
+    <string name="title_activity_menu_principal">Menu Principal</string>
+    <string name="title_activity_settings">Herramientas</string>
+    <string name="title_activity_alarm_clock">Alarma</string>
+    <string name="title_activity_homework">Tareas</string>
+    <string name="title_activity_calculadora">Calculadora</string>
+    <string name="title_activity_horario">Horario de Clase</string>
+    <string name="title_activity_revision">Revision</string>
+</resources>
