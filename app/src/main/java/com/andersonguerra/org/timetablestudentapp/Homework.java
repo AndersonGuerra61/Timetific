@@ -81,7 +81,37 @@ public class Homework extends AppCompatActivity{
         tabSpec.setIndicator("Tareas");
         tabHost.addTab(tabSpec);
 
+        // al presional el boton añadir
+        final Button addBtn = (Button) findViewById(R.id.btnAdd);
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Contact contact = new Contact(dbHandler.getContactsCount(), String.valueOf(nameTxt.getText()), String.valueOf(phoneTxt.getText()), String.valueOf(emailTxt.getText()), String.valueOf(addressTxt.getText()), imageUri);
+                if (!contactExists(contact)) {
+                    dbHandler.createContact(contact);
+                    Contacts.add(contact);
+                    contactAdapter.notifyDataSetChanged();
+                    Toast.makeText(getApplicationContext(), String.valueOf(nameTxt.getText()) + " Tarea guardada con exito!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Toast.makeText((getApplicationContext()), String.valueOf(nameTxt.getText()) + " Tarea existente. Use un nombre diferente.", Toast.LENGTH_SHORT).show();
+            }
+        });
 
+        nameTxt.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+                addBtn.setEnabled(String.valueOf(nameTxt.getText()).trim().length() > 0);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
 
         contactImageImgView.setOnClickListener(new View.OnClickListener() {
             @Override
