@@ -164,6 +164,25 @@ public class Homework extends AppCompatActivity{
         switch (item.getItemId()) {
             case EDIT:
                 //TODO: Aqui tengo que hacer el editar
+                System.out.println("esta es la tarea numero: " + Contacts.get(longClickedItemIndex).getId());
+                Intent intent = new Intent(Homework.this, EditHomework.class);
+                //con este for recorro la lista y encuentro el id del que deseo editar
+                for (Contact contactFor: Contacts) {
+                    if (contactFor.getId() == Contacts.get(longClickedItemIndex).getId()){
+                        // le mando la informacion a la otra actividad
+                        intent.putExtra("EXTRA_ID", contactFor.getId());
+                        intent.putExtra("EXTRA_NOMBRE", contactFor.getName());
+                        intent.putExtra("EXTRA_DESCRIPCION", contactFor.getPhone());
+                        intent.putExtra("EXTRA_PUNTEO", contactFor.getEmail());
+                        intent.putExtra("EXTRA_FECHA", contactFor.getAddress());
+                        System.out.println("el id de la tarea es: " + contactFor.getId());
+                        System.out.println("el nombre de la tarea es: " + contactFor.getName());
+                        System.out.println("la descripcion de la tarea es: " + contactFor.getPhone());
+                        System.out.println("el punteo de la tarea es: " + contactFor.getEmail());
+                        System.out.println("la fecha de la tarea es: " + contactFor.getAddress());
+                    }
+                }
+                startActivity(intent);
                 break;
             case DELETE:
                 //TODO: Aqui tengo que hacer el eliminar
