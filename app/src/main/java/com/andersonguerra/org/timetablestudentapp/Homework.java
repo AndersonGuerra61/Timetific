@@ -219,7 +219,7 @@ public class Homework extends AppCompatActivity{
         contactListView.setAdapter(contactAdapter);
     }
 
-    private  class ContactListAdapter extends ArrayAdapter<Contact> {
+    private class ContactListAdapter extends ArrayAdapter<Contact> {
         public ContactListAdapter(){
             super (Homework.this, R.layout.listview_item, Contacts);
         }

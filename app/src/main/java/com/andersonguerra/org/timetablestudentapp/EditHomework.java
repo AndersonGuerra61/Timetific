@@ -62,6 +62,8 @@ public class EditHomework extends AppCompatActivity {
                     dbHandler.updateContact(contact);
                     Contacts.add(contact);
                     Toast.makeText(getApplicationContext(), String.valueOf(nameTxtEdit.getText()) + " Tarea editada con exito!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(EditHomework.this, Homework.class);
+                    startActivity(intent);
                     return;
                 }
                 Toast.makeText((getApplicationContext()), String.valueOf(nameTxtEdit.getText()) + " Tarea existente. Use un nombre diferente.", Toast.LENGTH_SHORT).show();
