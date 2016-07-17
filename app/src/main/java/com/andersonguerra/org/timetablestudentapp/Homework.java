@@ -185,7 +185,9 @@ public class Homework extends AppCompatActivity{
                 startActivity(intent);
                 break;
             case DELETE:
-                //TODO: Aqui tengo que hacer el eliminar
+                dbHandler.deleteContact(Contacts.get(longClickedItemIndex));
+                Contacts.remove(longClickedItemIndex);
+                contactAdapter.notifyDataSetChanged();
                 break;
         }
         return super.onContextItemSelected(item);
