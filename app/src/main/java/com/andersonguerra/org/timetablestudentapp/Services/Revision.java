@@ -1,11 +1,10 @@
-package com.andersonguerra.org.timetablestudentapp;
+package com.andersonguerra.org.timetablestudentapp.Services;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -14,6 +13,9 @@ import android.widget.EditText;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.andersonguerra.org.timetablestudentapp.Models.Contact1;
+import com.andersonguerra.org.timetablestudentapp.R;
 
 import java.util.ArrayList;
 import java.util.List;

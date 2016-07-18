@@ -1,4 +1,4 @@
-package com.andersonguerra.org.timetablestudentapp;
+package com.andersonguerra.org.timetablestudentapp.Services;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -20,6 +20,10 @@ import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.andersonguerra.org.timetablestudentapp.DBHelper.DatabaseHandler;
+import com.andersonguerra.org.timetablestudentapp.Models.Contact;
+import com.andersonguerra.org.timetablestudentapp.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.andersonguerra.org.timetablestudentapp;
+package com.andersonguerra.org.timetablestudentapp.Menus;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.andersonguerra.org.timetablestudentapp.Services.Homework;
+import com.andersonguerra.org.timetablestudentapp.Services.Horario;
+import com.andersonguerra.org.timetablestudentapp.R;
 
 public class MenuPrincipal extends AppCompatActivity {
 

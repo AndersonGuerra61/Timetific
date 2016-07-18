@@ -1,4 +1,4 @@
-package com.andersonguerra.org.timetablestudentapp;
+package com.andersonguerra.org.timetablestudentapp.Services;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
+import com.andersonguerra.org.timetablestudentapp.AlarmHelper.Alarm_Reciever;
+import com.andersonguerra.org.timetablestudentapp.R;
 
 import java.util.Calendar;
 

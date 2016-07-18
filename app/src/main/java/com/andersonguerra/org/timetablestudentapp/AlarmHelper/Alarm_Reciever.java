@@ -1,4 +1,4 @@
-package com.andersonguerra.org.timetablestudentapp;
+package com.andersonguerra.org.timetablestudentapp.AlarmHelper;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

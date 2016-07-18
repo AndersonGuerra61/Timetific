@@ -1,4 +1,4 @@
-package com.andersonguerra.org.timetablestudentapp;
+package com.andersonguerra.org.timetablestudentapp.AlarmHelper;
 
 import android.annotation.TargetApi;
 import android.app.Notification;
@@ -11,6 +11,9 @@ import android.os.Build;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
+
+import com.andersonguerra.org.timetablestudentapp.R;
+import com.andersonguerra.org.timetablestudentapp.Services.RelojAlarma;
 
 public class RingtonePlayingService extends Service {
 

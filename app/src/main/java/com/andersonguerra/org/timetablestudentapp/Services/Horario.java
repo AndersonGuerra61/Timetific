@@ -1,23 +1,29 @@
-package com.andersonguerra.org.timetablestudentapp;
+package com.andersonguerra.org.timetablestudentapp.Services;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.webkit.WebView;
 
-public class Settings extends AppCompatActivity {
+import com.andersonguerra.org.timetablestudentapp.R;
+
+public class Horario extends AppCompatActivity {
+
+    WebView mWebView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_horario);
+        mWebView = (WebView) findViewById(R.id.webview);
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.loadUrl("file:///android_asset/new.html");
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_settings, menu);
+        getMenuInflater().inflate(R.menu.menu_horario, menu);
         return true;
     }
 
@@ -30,15 +36,5 @@ public class Settings extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void goToAlarmClock (View view){
-        Intent intent = new Intent (this, RelojAlarma.class);
-        startActivity(intent);
-    }
-
-    public void goToCalculator (View view){
-        Intent intent = new Intent (this, Calculadora.class);
-        startActivity(intent);
     }
 }

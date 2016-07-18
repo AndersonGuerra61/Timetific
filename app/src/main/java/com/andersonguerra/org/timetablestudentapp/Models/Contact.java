@@ -1,4 +1,4 @@
-package com.andersonguerra.org.timetablestudentapp;
+package com.andersonguerra.org.timetablestudentapp.Models;
 
 import android.net.Uri;
 import java.util.Objects;
